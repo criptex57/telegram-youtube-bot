@@ -4,7 +4,9 @@
 // https://api.telegram.org/file/bot(token)/(file_path)
 // https://habrahabr.ru/post/311578/
 require('youtube-dl.class.php');
-$token = "539586082:AAENtKJW24d1f92FgD0FkxKpAZ3a1jdZGOo";
+require('config.php');
+$config = new Config();
+$token = $config->getTelegramToken();
 define('addr', "https://api.telegram.org/bot$token/");
 $updateAction = "getUpdates?timeout=60";
 $lastEventId = '';
